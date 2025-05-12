@@ -21,7 +21,7 @@ This Streamlit app generates formatted Word documents with course descriptions b
 
 ## 🚀 Try It Live
 
-👉 https://your-app-name.streamlit.app](https://masudf6-vet-course-desc-builder-ui-a9lo3t.streamlit.app/
+👉 https://masudf6-vet-course-desc-builder-ui-a9lo3t.streamlit.app/
 
 ---
 
