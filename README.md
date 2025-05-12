@@ -1,6 +1,6 @@
-# 📄 Course Description Generator
+# 📄 VET Course Description Builder
 
-This Streamlit app generates formatted Word documents with course descriptions based on a list of training units provided in Excel. It's perfect for academic staff preparing documentation for student university applications.
+This Streamlit app generates formatted Word documents with course descriptions based on a list of training units provided in Excel. It's perfect for academic staff preparing documentation for student who require detailed perfomace criteria for courses they undertook.
 
 ---
 
