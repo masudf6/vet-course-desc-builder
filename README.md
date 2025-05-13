@@ -4,21 +4,6 @@ This Streamlit app generates formatted Word documents with course descriptions b
 
 ---
 
-## 🔧 Features
-
-- Upload Excel files containing:
-  - Subject Code
-  - Subject Name
-  - Subject Type (Core/Elective)
-  - Contact Hours
-- Automatically fetches official *Performance Criteria* from training.gov.au via XML
-- Exports a well-formatted `.docx` with:
-  - Bulleted criteria
-  - Times New Roman styling
-  - Custom course title
-
----
-
 ## 🚀 Try It Live
 
 👉 https://masudf6-vet-course-desc-builder-ui-a9lo3t.streamlit.app/
@@ -29,10 +14,10 @@ This Streamlit app generates formatted Word documents with course descriptions b
 
 Make sure your Excel file has the following columns:
 
-| Subject Code | Subject Name                    | Subject Type | Contact Hours |
-|--------------|----------------------------------|---------------|----------------|
-| BSBCRT512    | Originate and develop concepts   | Core          | 40 hours       |
-| ICTDBS506    | Design databases                 | Elective      | 100 hours      |
+| Subject Code | Subject Name                   | Subject Type | Contact Hours |
+| ------------ | ------------------------------ | ------------ | ------------- |
+| BSBCRT512    | Originate and develop concepts | Core         | 40 hours      |
+| ICTDBS506    | Design databases               | Elective     | 100 hours     |
 
 ---
 
