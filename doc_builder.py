@@ -18,7 +18,7 @@ def style_table(table, doc, ratios=None):
        can be arbitrary (e.g. [1,2,1,1,3]) and will be
        normalized to fill 100% of the usable width.
     """
-    # 1) Defaults & get usable width
+    # 1) defaults & get usable width
     if ratios is None:
         ratios = [.5, 2, .5, .5, 4]  # tweak to taste
     total = sum(ratios)
@@ -26,16 +26,16 @@ def style_table(table, doc, ratios=None):
     sect = doc.sections[0]
     usable = sect.page_width - sect.left_margin - sect.right_margin
 
-    # 2) Apply “Table Grid” and turn autofit off
+    # 2) apply “Table Grid” and turn autofit off
     table.style = 'Table Grid'
 
-    # 3) Set column widths proportionally
+    # 3) set column widths proportionally
     for col_idx, (col, ratio) in enumerate(zip(table.columns, ratios)):
         col_width = Emu(int(usable * (ratio/total)))
         for cell in col.cells:
             cell.width = col_width
 
-def build_doc(units: List[Unit], title: str = '', out_path: Optional[str] = None) -> Union[BytesIO, None]:
+def build_doc(units: List[Unit], course_title: str = '', header_image=None, out_path: Optional[str] = None) -> Union[BytesIO, None]:
     doc = Document()
 
     section = doc.sections[0]
@@ -45,7 +45,8 @@ def build_doc(units: List[Unit], title: str = '', out_path: Optional[str] = None
     header = section.header
     hdr_p = header.paragraphs[0] if header.paragraphs else header.add_paragraph()
     run = hdr_p.add_run()
-    run.add_picture('header.png', width=usable_width)
+    if header_image:
+        run.add_picture(header_image, width=usable_width)
     hdr_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     # ── FOOTER ──
@@ -53,7 +54,7 @@ def build_doc(units: List[Unit], title: str = '', out_path: Optional[str] = None
 
     style = doc.styles['Normal']
     style.font.name = 'Times New Roman'
-    doc.add_heading(f"Course Description: {title}", level=1)
+    doc.add_heading(f"Course Description: {course_title}", level=1)
 
     tbl = doc.add_table(rows=1, cols=5)
     style_table(tbl, doc)  # ← apply our formatting

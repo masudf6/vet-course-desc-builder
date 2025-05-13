@@ -4,8 +4,8 @@ from typing import List
 from models import Unit
 
 
-def load_units(excel_path: str) -> List[Unit]:
-    df = pd.read_excel(excel_path, dtype=str)
+def load_units(excel_file: str) -> List[Unit]:
+    df = pd.read_excel(excel_file, dtype=str)
     return [
         Unit(
             code=row['Subject Code'].strip(),
